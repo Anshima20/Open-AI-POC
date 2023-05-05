@@ -1,0 +1,5 @@
+com/open/ai/poc/OpenAI/OpenAiApplication.class
+com/open/ai/poc/OpenAI/repository/ProductRepository.class
+com/open/ai/poc/OpenAI/model/Product.class
+com/open/ai/poc/OpenAI/service/ProductService.class
+com/open/ai/poc/OpenAI/Controller/ProductController.class
