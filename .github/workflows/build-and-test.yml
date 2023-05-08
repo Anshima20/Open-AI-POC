@@ -28,5 +28,5 @@ jobs:
         sudo install /tmp/copilot /usr/local/bin/copilot
 
     - name: Create PR Summary with Copilot
-      run: copilot summary
+      run: copilot:summary
 
