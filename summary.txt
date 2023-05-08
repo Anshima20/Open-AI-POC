@@ -1,0 +1,22 @@
+Commands for services.
+Services are long-running ECS or App Runner services.
+
+Usage
+  copilot svc [command]
+
+Available Commands
+  init        Creates a new service in an application.
+  ls          Lists all the services in an application.
+  package     Print the AWS CloudFormation template of a service.
+  override    Override the AWS CloudFormation template of a service.
+  deploy      Deploys a service to an environment.
+  delete      Deletes a service from an application.
+  show        Shows info about a deployed service per environment.
+  status      Shows status of a deployed service.
+  logs        Displays logs of a deployed service.
+  exec        Execute a command in a running container part of a service.
+  pause       Pause running App Runner service.
+  resume      Resumes a paused service.
+
+Flags
+  -h, --help   help for svc
