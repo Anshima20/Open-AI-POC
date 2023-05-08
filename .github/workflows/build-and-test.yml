@@ -26,10 +26,16 @@ jobs:
       run: |
         curl -Lo /tmp/copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-linux
         sudo install /tmp/copilot /usr/local/bin/copilot
-        echo 'export PATH="/usr/local/bin:$PATH"' >> $GITHUB_ENV
         
-    - name: Add Copilot Summary to PR Description
+    - name: Create PR Summary with Copilot
       run: |
         /usr/local/bin/copilot svc summary > summary.txt
-        /usr/local/bin/copilot pull-request-description --body "$(cat summary.txt)" ${{ github.event.pull_request.number }}
+        cat summary.txt
+
+    - name: Update PR Description
+      uses: peter-evans/create-pull-request@v3.10.0
+      with:
+        commit-message: 'Update PR description'
+        title: 'Update PR description'
+        body-file: 'summary.txt'
 
