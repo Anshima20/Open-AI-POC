@@ -34,6 +34,6 @@ jobs:
         
     - name: Add Copilot Summary to PR Description
       run: |
-        summary=$(jq -r '.summary' summary.json)
-        echo "## Copilot Summary\n\n${summary}" >> $GITHUB_EVENT_PATH
+        /usr/local/bin/copilot svc summary > summary.txt
+        /usr/local/bin/copilot pull-request-description --body "$(cat summary.txt)" ${{ github.event.pull_request.number }}
 
