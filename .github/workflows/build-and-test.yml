@@ -27,10 +27,6 @@ jobs:
         curl -Lo /tmp/copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-linux
         sudo install /tmp/copilot /usr/local/bin/copilot
         echo 'export PATH="/usr/local/bin:$PATH"' >> $GITHUB_ENV
-
-    - name: Create PR Summary with Copilot
-      run: |
-        /usr/local/bin/copilot svc summary --json > summary.json
         
     - name: Add Copilot Summary to PR Description
       run: |
