@@ -35,6 +35,7 @@ jobs:
     - name: Update PR Description
       uses: peter-evans/create-pull-request@v3.10.0
       with:
+        base: main
         commit-message: 'Update PR description'
         title: 'Update PR description'
         body-file: 'summary.txt'
