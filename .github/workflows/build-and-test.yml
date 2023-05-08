@@ -1,1 +1,29 @@
+name: Java Maven Build and Copilot Summary
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up JDK 8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 8
+
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+
+    - name: Install Copilot
+      run: |
+        curl -Lo /tmp/copilot https://github.com/aws/copilot-cli/releases/download/v1.9.0/copilot-linux-v1.9.0
+        sudo install /tmp/copilot /usr/local/bin/copilot
+
+    - name: Create PR Summary with Copilot
+      run: copilot summary
 
