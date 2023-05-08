@@ -41,5 +41,6 @@ jobs:
         commit-message: 'Update PR description'
         title: 'Update PR description'
         body: $(cat summary.txt)
+        run: echo "Debug message"
 
 
