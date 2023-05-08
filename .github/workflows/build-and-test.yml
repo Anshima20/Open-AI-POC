@@ -29,13 +29,5 @@ jobs:
         
     - name: Create PR Summary with Copilot
       run: |
-        /usr/local/bin/copilot svc summary > summary.txt
-        cat summary.txt
-
-    - name: Update PR Description
-      uses: peter-evans/create-pull-request@v3.10.0
-      with:
-        commit-message: 'Update PR description'
-        title: 'Update PR description'
-        body-file: 'summary.txt'
+        /usr/local/bin/copilot svc summary
 
