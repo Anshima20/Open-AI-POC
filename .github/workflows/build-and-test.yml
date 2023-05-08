@@ -30,5 +30,10 @@ jobs:
 
     - name: Create PR Summary with Copilot
       run: |
-        /usr/local/bin/copilot svc summary
+        /usr/local/bin/copilot svc summary --json > summary.json
+        
+    - name: Add Copilot Summary to PR Description
+      run: |
+        summary=$(jq -r '.summary' summary.json)
+        echo "## Copilot Summary\n\n${summary}" >> $GITHUB_EVENT_PATH
 
