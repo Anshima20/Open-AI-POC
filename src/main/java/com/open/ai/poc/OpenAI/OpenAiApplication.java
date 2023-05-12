@@ -9,5 +9,4 @@ public class OpenAiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OpenAiApplication.class, args);
 	}
-
 }
